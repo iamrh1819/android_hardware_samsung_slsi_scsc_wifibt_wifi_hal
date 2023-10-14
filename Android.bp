@@ -1,0 +1,41 @@
+//############################################################################
+//
+// Copyright (c) 2012 - 2013 Samsung Electronics Co., Ltd
+//
+//############################################################################
+
+// Make the HAL library
+// ============================================================
+cc_library_static {
+    name: "libwifi-hal-slsi",
+
+    cflags: ["-Wno-unused-parameter"],
+
+    header_libs: [
+        "libhardware_legacy_headers",
+        "liblog_headers"
+    ],
+
+    include_dirs: [
+        "system/core/include/",
+        "external/libnl/include",
+        "external/wpa_supplicant_8/src/drivers",
+    ],
+
+    srcs: [
+        "wifi_hal.cpp",
+        "rtt.cpp",
+        "common.cpp",
+        "cpp_bindings.cpp",
+        "gscan.cpp",
+        "link_layer_stats.cpp",
+        "wifi_offload.cpp",
+        "roam.cpp",
+        "wifi_logger.cpp",
+        "wifi_nan.cpp",
+        "wifi_nan_data_path.cpp",
+    ],
+
+    vendor: true,
+
+}
